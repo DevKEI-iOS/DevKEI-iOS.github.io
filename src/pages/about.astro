@@ -4,10 +4,111 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout
 	title="About | 개인 홈페이지"
-	description="개인이나 회사 소개처럼 여러 내용을 흐름 있게 이어서 설명하는 페이지입니다."
+	description="기술로 사람의 경험을 번역하는 Kei의 소개 페이지입니다."
 >
 	<section class="page-intro">
 		<h1>About</h1>
-		<p>개인이나 회사 소개처럼 여러 내용을 흐름 있게 이어서 설명하는 페이지입니다.</p>
+		<p>기술로 사람의 경험을 번역합니다.</p>
+	</section>
+
+	<section class="about-section" aria-labelledby="about-background">
+		<h2 id="about-background">짧은 소개</h2>
+		<p>
+			저는 사람들의 말과 행동 속에 담긴 맥락을 관찰하고, 그것을 더
+			이해하기 쉬운 경험으로 바꾸는 일에 관심이 있습니다.
+		</p>
+		<p>
+			영업과 오프라인 현장에서 다양한 사람들을 만나며 커뮤니케이션과
+			경험의 중요성을 배웠습니다. 지금은 Apple Developer Academy에서
+			iOS와 Apple 기술을 배우며, 기술이 사람들의 언어와 문화를 연결하는
+			방법을 탐색하고 있습니다.
+		</p>
+	</section>
+
+	<section class="about-section" aria-labelledby="about-interests">
+		<h2 id="about-interests">지금 관심 있는 것</h2>
+		<p>
+			커뮤니케이션, 경험 설계, 게이미피케이션, 언어 문화, 커뮤니티에
+			관심이 있습니다.
+		</p>
+		<p>
+			특히 사람들이 낯선 정보를 더 쉽게 이해하고, 서로의 차이를 부담 없이
+			받아들일 수 있는 경험을 고민하고 있습니다.
+		</p>
+	</section>
+
+	<section class="about-section" aria-labelledby="about-learning">
+		<h2 id="about-learning">배우는 중인 것</h2>
+		<p>
+			현재 SwiftUI, iOS, Speech, Natural Language, UX 설계를 배우고
+			있습니다.
+		</p>
+		<p>
+			아직 모든 것을 잘 다루는 단계는 아니지만, 사람의 말과 맥락을 기술로
+			다루는 방법을 하나씩 익히고 있습니다.
+		</p>
+	</section>
+
+	<section class="about-section" aria-labelledby="about-experience">
+		<h2 id="about-experience">해본 일</h2>
+		<p>
+			판교어 번역 프로젝트를 기획했고, 게이미피케이션 기반 앱 아이디어를
+			설계했습니다.
+		</p>
+		<p>
+			또한 워크샵과 오프라인 커뮤니케이션 경험을 통해 사람들이 어떤
+			순간에 참여하고 공감하는지 관찰해 왔습니다.
+		</p>
+	</section>
+
+	<section class="about-section" aria-labelledby="about-next">
+		<h2 id="about-next">앞으로 채워갈 것</h2>
+		<p>
+			앞으로는 사람들이 더 쉽게 공감하고 연결될 수 있는 경험 중심의
+			서비스를 만들고 싶습니다.
+		</p>
+		<p>
+			기술과 사람 사이의 거리를 줄이는 프로덕트를 만드는 것이 목표입니다.
+		</p>
+		<p class="note">
+			이 구성은 지금 수업에서 About 페이지를 이해하기 쉽게 나누기 위한
+			기준입니다. 나중에 홈페이지의 방향이 더 분명해지면 섹션 이름이나
+			내용은 바꿀 수 있습니다.
+		</p>
 	</section>
 </Layout>
+
+<style>
+	.about-section {
+		max-width: 760px;
+	}
+
+	.about-section h2 {
+		margin: 0;
+		color: #111827;
+		font-size: clamp(1.5rem, 3vw, 2.25rem);
+		line-height: 1.25;
+		letter-spacing: 0;
+	}
+
+	.about-section p {
+		margin: 16px 0 0;
+		color: #4b5563;
+		font-size: 1.05rem;
+		line-height: 1.85;
+	}
+
+	.about-section .note {
+		margin-top: 28px;
+		border-left: 3px solid #2563eb;
+		padding-left: 16px;
+		color: #6b7280;
+		font-size: 0.98rem;
+	}
+
+	@media (max-width: 640px) {
+		.about-section p {
+			font-size: 1rem;
+		}
+	}
+</style>

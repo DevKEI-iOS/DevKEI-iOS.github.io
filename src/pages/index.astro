@@ -5,27 +5,49 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="개인 홈페이지">
 	<section class="hero" aria-labelledby="home-title">
 		<p class="eyebrow">Personal Homepage</p>
-		<h1 id="home-title">안녕하세요, 저는 Kei입니다.</h1>
-		<p class="tagline">만드는 것과 배우는 것을 기록하는 개인 홈페이지입니다.</p>
+		<h1 id="home-title">Kei</h1>
+		<p class="tagline">기술로 사람의 경험을 번역합니다.</p>
 		<p class="intro">
-			이곳에는 앞으로 저를 소개하는 글, 진행한 프로젝트, 배운 내용을 정리한
-			포스트를 차근차근 모아갈 예정입니다.
+			경험 설계, 커뮤니케이션, 게이미피케이션에 관심이 있습니다. 이곳은
+			제가 누구인지, 무엇을 만들고 배우는지 정리해 가는 개인 홈페이지입니다.
 		</p>
 	</section>
 
-	<section class="next-sections" aria-label="앞으로 확장할 섹션">
+	<section class="primary-guide" aria-labelledby="start-title">
+		<div>
+			<p class="section-label">Start Here</p>
+			<h2 id="start-title">처음 방문했다면 About부터 보면 좋습니다.</h2>
+			<p>
+				About에는 저를 소개하는 내용을 차근차근 정리할 예정입니다. 아직 모든
+				내용이 확정된 것은 아니어서, 지금은 방향을 잡아 가는 중입니다.
+			</p>
+		</div>
+		<a class="primary-link" href="/about/">About 페이지로 이동하기</a>
+	</section>
+
+	<section class="next-sections" aria-label="사이트 둘러보기">
 		<a href="/about/">
 			<span>About</span>
-			<strong>나를 소개하는 공간</strong>
+			<strong>소개 보기</strong>
+			<p>제가 어떤 관심을 가지고 있는지 이어서 설명하는 공간입니다.</p>
 		</a>
 		<a href="/projects/">
 			<span>Projects</span>
-			<strong>만든 것들을 모으는 공간</strong>
+			<strong>프로젝트 보기</strong>
+			<p>만든 것과 실험한 내용을 비슷한 형식으로 모아둘 공간입니다.</p>
 		</a>
 		<a href="/posts/">
 			<span>Posts</span>
-			<strong>배운 것을 기록하는 공간</strong>
+			<strong>기록 보기</strong>
+			<p>배운 것과 경험을 글 중심으로 남겨둘 공간입니다.</p>
 		</a>
+	</section>
+
+	<section class="structure-note" aria-label="사이트 구조 안내">
+		<p>
+			이 구조는 이번 수업에서 사이트를 이해하기 쉽게 나눈 기준입니다. 나중에
+			홈페이지의 방향에 맞게 이름이나 역할을 바꿀 수 있습니다.
+		</p>
 	</section>
 </Layout>
 
@@ -69,6 +91,57 @@ import Layout from "../layouts/Layout.astro";
 		line-height: 1.8;
 	}
 
+	.primary-guide {
+		display: flex;
+		justify-content: space-between;
+		gap: 32px;
+		align-items: flex-end;
+		max-width: 920px;
+		border-top: 1px solid #e5e7eb;
+		border-bottom: 1px solid #e5e7eb;
+		padding: 32px 0;
+	}
+
+	.primary-guide div {
+		max-width: 620px;
+	}
+
+	.section-label {
+		margin: 0 0 12px;
+		color: #2563eb;
+		font-size: 0.82rem;
+		font-weight: 800;
+		letter-spacing: 0;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		margin: 0;
+		color: #111827;
+		font-size: clamp(1.75rem, 3vw, 2.4rem);
+		line-height: 1.25;
+		letter-spacing: 0;
+	}
+
+	.primary-guide p:not(.section-label),
+	.structure-note p,
+	.next-sections p {
+		margin: 14px 0 0;
+		color: #4b5563;
+		font-size: 1rem;
+		line-height: 1.75;
+	}
+
+	.primary-link {
+		flex: 0 0 auto;
+		color: #111827;
+		font-weight: 800;
+		text-decoration: underline;
+		text-decoration-thickness: 0.12em;
+		text-underline-offset: 0.35em;
+		white-space: nowrap;
+	}
+
 	.next-sections {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -98,9 +171,18 @@ import Layout from "../layouts/Layout.astro";
 		line-height: 1.45;
 	}
 
+	.structure-note {
+		max-width: 760px;
+	}
+
 	@media (max-width: 640px) {
 		.intro {
 			font-size: 1rem;
+		}
+
+		.primary-guide {
+			align-items: flex-start;
+			flex-direction: column;
 		}
 
 		.next-sections {

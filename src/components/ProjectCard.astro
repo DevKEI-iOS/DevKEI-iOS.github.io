@@ -1,0 +1,110 @@
+---
+interface Project {
+	title: string;
+	description: string;
+	role: string;
+	tools: string[];
+	result: string;
+	slug: string;
+}
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+const projectUrl = `/projects/${project.slug}/`;
+---
+
+<article class="project-card">
+	<div>
+		<p class="card-label">Project</p>
+		<h2>{project.title}</h2>
+		<p class="description">{project.description}</p>
+	</div>
+
+	<dl>
+		<div>
+			<dt>역할</dt>
+			<dd>{project.role}</dd>
+		</div>
+		<div>
+			<dt>사용 도구</dt>
+			<dd>{project.tools.join(", ")}</dd>
+		</div>
+		<div>
+			<dt>결과</dt>
+			<dd>{project.result}</dd>
+		</div>
+	</dl>
+
+	<a href={projectUrl}>자세히 보기</a>
+</article>
+
+<style>
+	.project-card {
+		display: grid;
+		gap: 24px;
+		border: 1px solid #e5e7eb;
+		border-radius: 8px;
+		padding: 28px;
+	}
+
+	.card-label {
+		margin: 0 0 12px;
+		color: #2563eb;
+		font-size: 0.82rem;
+		font-weight: 800;
+		letter-spacing: 0;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		margin: 0;
+		color: #111827;
+		font-size: clamp(1.5rem, 3vw, 2.2rem);
+		line-height: 1.25;
+		letter-spacing: 0;
+	}
+
+	.description {
+		margin: 14px 0 0;
+		color: #4b5563;
+		font-size: 1.05rem;
+		line-height: 1.75;
+	}
+
+	dl {
+		display: grid;
+		gap: 16px;
+		margin: 0;
+	}
+
+	dt {
+		color: #111827;
+		font-size: 0.92rem;
+		font-weight: 800;
+	}
+
+	dd {
+		margin: 6px 0 0;
+		color: #4b5563;
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	a {
+		justify-self: start;
+		color: #111827;
+		font-weight: 800;
+		text-decoration: underline;
+		text-decoration-thickness: 0.12em;
+		text-underline-offset: 0.35em;
+	}
+
+	@media (max-width: 640px) {
+		.project-card {
+			padding: 22px;
+		}
+	}
+</style>
