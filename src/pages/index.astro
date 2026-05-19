@@ -1,124 +1,35 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="ko">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta
-			name="description"
-			content="Astro로 만든 개인 홈페이지입니다. About, Projects, Posts 페이지로 확장할 수 있는 첫 버전입니다."
-		/>
-		<meta name="generator" content={Astro.generator} />
-		<title>개인 홈페이지</title>
-	</head>
-	<body>
-		<header>
-			<a class="site-name" href="/">Kei</a>
-			<nav aria-label="주요 메뉴">
-				<a href="/" aria-current="page">Home</a>
-				<a href="/about/">About</a>
-				<a href="/projects/">Projects</a>
-				<a href="/posts/">Posts</a>
-			</nav>
-		</header>
+<Layout title="개인 홈페이지">
+	<section class="hero" aria-labelledby="home-title">
+		<p class="eyebrow">Personal Homepage</p>
+		<h1 id="home-title">안녕하세요, 저는 Kei입니다.</h1>
+		<p class="tagline">만드는 것과 배우는 것을 기록하는 개인 홈페이지입니다.</p>
+		<p class="intro">
+			이곳에는 앞으로 저를 소개하는 글, 진행한 프로젝트, 배운 내용을 정리한
+			포스트를 차근차근 모아갈 예정입니다.
+		</p>
+	</section>
 
-		<main>
-			<section class="hero" aria-labelledby="home-title">
-				<p class="eyebrow">Personal Homepage</p>
-				<h1 id="home-title">안녕하세요, 저는 Kei입니다.</h1>
-				<p class="tagline">만드는 것과 배우는 것을 기록하는 개인 홈페이지입니다.</p>
-				<p class="intro">
-					이곳에는 앞으로 저를 소개하는 글, 진행한 프로젝트, 배운 내용을 정리한
-					포스트를 차근차근 모아갈 예정입니다.
-				</p>
-			</section>
+	<section class="next-sections" aria-label="앞으로 확장할 섹션">
+		<a href="/about/">
+			<span>About</span>
+			<strong>나를 소개하는 공간</strong>
+		</a>
+		<a href="/projects/">
+			<span>Projects</span>
+			<strong>만든 것들을 모으는 공간</strong>
+		</a>
+		<a href="/posts/">
+			<span>Posts</span>
+			<strong>배운 것을 기록하는 공간</strong>
+		</a>
+	</section>
+</Layout>
 
-			<section class="next-sections" aria-label="앞으로 확장할 섹션">
-				<a href="/about/">
-					<span>About</span>
-					<strong>나를 소개하는 공간</strong>
-				</a>
-				<a href="/projects/">
-					<span>Projects</span>
-					<strong>만든 것들을 모으는 공간</strong>
-				</a>
-				<a href="/posts/">
-					<span>Posts</span>
-					<strong>배운 것을 기록하는 공간</strong>
-				</a>
-			</section>
-		</main>
-	</body>
-</html>
-
-<style is:global>
-	:root {
-		color: #1f2937;
-		background: #ffffff;
-		font-family:
-			"Apple SD Gothic Neo", "Noto Sans KR", Inter, ui-sans-serif, system-ui,
-			-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-	}
-
-	* {
-		box-sizing: border-box;
-	}
-
-	body {
-		min-height: 100vh;
-		margin: 0;
-		background: #ffffff;
-	}
-
-	header,
-	main {
-		width: min(100% - 40px, 1040px);
-		margin: 0 auto;
-	}
-
-	header {
-		display: flex;
-		justify-content: space-between;
-		gap: 24px;
-		align-items: center;
-		padding: 36px 0 20px;
-	}
-
-	.site-name {
-		color: #111827;
-		text-decoration: none;
-		font-size: 1rem;
-		font-weight: 800;
-	}
-
-	nav {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 18px;
-		align-items: center;
-	}
-
-	nav a {
-		color: #4b5563;
-		text-decoration: none;
-		font-size: 0.95rem;
-		font-weight: 700;
-		padding: 8px 0;
-	}
-
-	nav a[aria-current="page"] {
-		color: #111827;
-	}
-
-	main {
-		display: grid;
-		gap: 72px;
-		padding: 104px 0 96px;
-	}
+<style>
 
 	.hero {
 		max-width: 820px;
@@ -188,21 +99,6 @@
 	}
 
 	@media (max-width: 640px) {
-		header,
-		main {
-			width: min(100% - 28px, 1040px);
-		}
-
-		header {
-			align-items: flex-start;
-			flex-direction: column;
-		}
-
-		main {
-			gap: 48px;
-			padding: 64px 0 72px;
-		}
-
 		.intro {
 			font-size: 1rem;
 		}
